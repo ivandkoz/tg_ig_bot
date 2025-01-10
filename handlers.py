@@ -35,7 +35,7 @@ async def start_handler(msg: Message):
 
 @router.message()
 async def message_handler(msg: Message):
-    if 'instagram' in msg.text and not 'ddinstagram':
+    if 'instagram' in msg.text and not 'ddinstagram' in msg.text:
         answer = Text(Bold(msg.from_user.full_name), ' send:\n')
         await msg.answer(**answer.as_kwargs(),
                          link_preview_options={'url': create_link(msg.text),
